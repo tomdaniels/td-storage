@@ -5,24 +5,26 @@ type StorageConfig = {
 
 type StorageFactory = {
   storage: Storage;
-  get(key: string): unknown;
+  get(key: string): any;
   has(key: string): boolean;
   set(key: string, value: unknown): void;
   remove(key: string): void;
 };
 
 function createInstance({ driver, name }: StorageConfig): StorageFactory {
-  if (typeof window === 'undefined') {
-    throw new Error('cannot access localStorage outside of a browser');
+  let storage: any;
+
+  try {
+    storage = typeof window === 'undefined' ? {} : window[driver];
+  } catch (error) {
+    console.error(driver, error);
   }
 
-  const storage: Storage = window[driver];
   const prefix = `${name}/`;
-
   return {
     storage,
 
-    get(key: string): unknown {
+    get(key: string): any {
       let result;
 
       try {
@@ -70,5 +72,4 @@ function createInstance({ driver, name }: StorageConfig): StorageFactory {
   };
 }
 
-const storageFactory: StorageFactory = Object.assign(createInstance);
-export default storageFactory;
+export default createInstance;
