@@ -2,10 +2,10 @@
   "name": "td-storage",
   "version": "0.0.1",
   "description": "local storage methods",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon dist/index.js",
-    "tsc:watch": "tsc -w",
+    "build": "tsc",
+    "build:watch": "yarn run build -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tom Daniels",
