@@ -2,7 +2,7 @@
   "name": "td-storage",
   "version": "1.0.0",
   "description": "local storage methods",
-  "main": "index.js",
+  "main": "./lib",
   "scripts": {
     "build": "tsc",
     "build:watch": "yarn run build -w",
