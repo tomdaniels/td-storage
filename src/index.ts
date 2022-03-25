@@ -70,4 +70,5 @@ function createInstance({ driver, name }: StorageConfig): StorageFactory {
   };
 }
 
-export default Object.assign(createInstance);
+const storageFactory: StorageFactory = Object.assign(createInstance);
+export default storageFactory;
