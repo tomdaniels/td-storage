@@ -10,7 +10,7 @@ yarn add td-storage
 
 ## Configuration
 
-Support for both `localStorage` and `sessionStorage`
+Support for both `localStorage` and `sessionStorage`.
 
 ```javascript
 import storageFactory from 'td-storage';
@@ -19,6 +19,12 @@ const store = storageFactory({
   driver: 'localStorage', // 'sessionStorage'
   name: 'my-cool-app',
 });
+
+/**
+ * each instance of the storageFactory is prefixed with the provided name
+ * i.e the below will be stored under "my-cool-app/my-key"
+ */
+store.set(key, 'any value'); // => void
 ```
 
 ## Methods (has, get, set, remove)
