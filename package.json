@@ -9,5 +9,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tom Daniels",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": [
+    "localStorage",
+    "sessionStorage",
+    "DOM",
+    "react",
+    "web",
+    "storage"
+  ]
 }
