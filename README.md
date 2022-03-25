@@ -1,4 +1,4 @@
-# td-storage
+# td-storage [![npm version](https://badge.fury.io/js/td-storage.svg)](https://badge.fury.io/js/td-storage)
 
 Helper functions to access local storage, wrapped in try catches and JSON parsing taken care of.
 
